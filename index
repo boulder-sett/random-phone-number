@@ -1,0 +1,22 @@
+import random
+
+# Function to generate a random phone number
+def generate_random_phone_number():
+    # Randomly select a country code
+    country_codes = ['+1', '+44', '+61', '+81', '+86', '+91']
+    country_code = random.choice(country_codes)
+
+    # Generate a random local number with 7 digits
+    local_number = ''.join(random.choices('0123456789', k=7))
+
+    # Combine the country code and local number
+    phone_number = f'{country_code} {local_number}'
+
+    return phone_number
+
+# Generate 100 random phone numbers
+random_phone_numbers = [generate_random_phone_number() for _ in range(100)]
+
+# Print the results
+for phone_number in random_phone_numbers:
+    print(phone_number)
